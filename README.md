@@ -1,28 +1,71 @@
 # StoryNest
 
-StoryNest is a frontend-only story web app. It lets users view demo stories, add new stories, edit stories, delete stories, search stories, sort stories, and save changes in `localStorage`.
+StoryNest is a modern, frontend-only storytelling web app. Visitors can browse demo stories, add their own stories, search and sort the collection, view story details, edit saved stories, delete stories, and see saved locations in a static visual location panel.
 
-The app does not use a backend, API server, database, authentication server, or environment variables. It is ready to deploy as a static website on GitHub Pages.
+The project is intentionally simple and portfolio-friendly: no backend, no database, no API keys, no authentication server, and no environment variables. User-created data is stored in the browser with `localStorage`.
+
+## Live Demo
+
+[Open the live website](https://mrivaldodestadhiohamzah.github.io/StoryNest/)
+
+## Features
+
+- Responsive landing page and story collection
+- Story cards with image, title, description, date, and actions
+- Add, edit, and delete stories
+- Search stories by title or content
+- Sort stories by newest or oldest
+- Story detail page
+- Static location panel based on saved latitude and longitude
+- Demo stories for first-time visitors
+- Browser-only persistence with `localStorage`
+- GitHub Pages deployment workflow
 
 ## Tech Stack
 
 - HTML
 - CSS
 - Vanilla JavaScript ES modules
-- `localStorage` for browser-side saved data
-- GitHub Actions for GitHub Pages deployment
+- `localStorage`
+- GitHub Actions
+- GitHub Pages
 
-## Install
+## Project Structure
 
-This project has no external runtime dependencies. Install is optional, but running it keeps the usual npm workflow familiar:
+```text
+/
+├── .github/
+│   └── workflows/
+│       └── pages.yml
+├── assets/
+│   └── SNlogo.png
+├── scripts/
+│   ├── build.js
+│   └── serve-static.js
+├── src/
+│   ├── components/
+│   ├── presenters/
+│   ├── routes/
+│   ├── store/
+│   ├── utils/
+│   └── views/
+├── index.html
+├── script.js
+├── style.css
+├── package.json
+├── .gitignore
+└── README.md
+```
+
+## Run Locally
+
+This project has no external runtime dependencies. You can install npm metadata if you want to use the included scripts:
 
 ```bash
 npm install
 ```
 
-## Run Locally
-
-Use the included static preview script:
+Start a local static server:
 
 ```bash
 npm run dev
@@ -36,21 +79,17 @@ http://127.0.0.1:4174/
 
 ## Build
 
-Create the static production output:
+Generate the deployable static files:
 
 ```bash
 npm run build
 ```
 
-The deployable files will be generated in:
-
-```text
-dist/
-```
+The generated output is placed in `dist/`. The `dist/` folder is ignored by Git because GitHub Actions rebuilds it during deployment.
 
 ## Preview The Build
 
-After building, preview the exact static output:
+After building, preview the generated static output:
 
 ```bash
 npm run preview
@@ -62,36 +101,42 @@ Open:
 http://127.0.0.1:4175/
 ```
 
-## Deploy To GitHub Pages
+## Editing Content And Images
 
-This repository includes a GitHub Actions workflow at:
+- Main HTML shell: `index.html`
+- Main styling: `style.css`
+- App entry point: `script.js`
+- Demo story data: `src/store/localStoryStore.js`
+- Logo and image assets: `assets/`
 
-```text
-.github/workflows/pages.yml
-```
+When adding images, use short lowercase or readable names such as `story-card.png`, `dashboard.png`, or `sn-logo.png`, then update the paths in HTML, CSS, JavaScript, or README files.
 
-The workflow builds the static site and deploys the `dist/` folder to GitHub Pages.
+## Deployment
 
-### GitHub Setup
+This project deploys through GitHub Actions using `.github/workflows/pages.yml`.
 
-1. Push this project to a GitHub repository named `StoryNest`.
-2. Open the repository on GitHub.
+To publish with GitHub Pages:
+
+1. Push the repository to GitHub.
+2. Open the repository settings.
 3. Go to `Settings` > `Pages`.
-4. Under `Build and deployment`, set `Source` to `GitHub Actions`.
-5. Push to the `main` or `master` branch.
-6. Wait for the `Deploy StoryNest to GitHub Pages` action to finish.
+4. Set `Source` to `GitHub Actions`.
+5. Push to the default branch.
+6. Wait for the Pages workflow to complete.
 
-Your website will be available at:
+The app uses hash routing (`#/add`, `#/detail/:id`, `#/edit/:id`), so refreshing pages works correctly on GitHub Pages.
 
-```text
-https://mrivaldodestadhiohamzah.github.io/StoryNest/
-```
+## Source Code
 
-This URL uses your GitHub username: `mrivaldodestadhiohamzah`.
+The source code is available in the current GitHub repository. Forks or copies can keep the same static deployment workflow without adding a backend.
 
-## Notes For GitHub Pages
+## Contact
 
-- StoryNest uses hash routing, such as `#/add` and `#/detail/story-id`, so refreshing pages works on GitHub Pages.
-- Asset paths are relative, so CSS, JavaScript, and the logo work under `/StoryNest/`.
-- The generated `.nojekyll` file prevents GitHub Pages from ignoring folders or files that start with underscores.
-- User-created stories are saved in each visitor's browser using `localStorage`.
+GitHub: [@mrivaldodestadhiohamzah](https://github.com/mrivaldodestadhiohamzah)
+
+## Repository Safety
+
+- No backend service is required.
+- No API keys or private tokens are stored in the project.
+- `.env` files are ignored.
+- Generated folders such as `dist/`, `build/`, and `node_modules/` are ignored.

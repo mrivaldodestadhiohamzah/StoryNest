@@ -3,7 +3,7 @@ import { dirname, join } from 'node:path';
 
 const filesToCopy = [
   'index.html',
-  'index.js',
+  'script.js',
   'style.css',
   'assets/SNlogo.png',
   'src/components/map.js',
