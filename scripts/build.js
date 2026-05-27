@@ -5,7 +5,7 @@ const filesToCopy = [
   'index.html',
   'index.js',
   'style.css',
-  'ChatGPT Image May 25, 2026, 07_50_35 AM.png',
+  'assets/SNlogo.png',
   'src/components/map.js',
   'src/presenters/addStoryPresenter.js',
   'src/presenters/editStoryPresenter.js',

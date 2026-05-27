@@ -1,4 +1,4 @@
-export const logoSrc = './ChatGPT%20Image%20May%2025%2C%202026%2C%2007_50_35%20AM.png';
+export const logoSrc = './assets/SNlogo.png';
 
 export const escapeHtml = (value = '') => String(value)
   .replaceAll('&', '&amp;')
