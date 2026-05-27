@@ -1,71 +1,71 @@
 # StoryNest
 
-StoryNest is a modern, frontend-only storytelling web app. Visitors can browse demo stories, add their own stories, search and sort the collection, view story details, edit saved stories, delete stories, and see saved locations in a static visual location panel.
+StoryNest is a small web app for writing and managing short stories. It includes a story list, a writing form, detail pages, simple search and sorting, and browser-based saving with `localStorage`.
 
-The project is intentionally simple and portfolio-friendly: no backend, no database, no API keys, no authentication server, and no environment variables. User-created data is stored in the browser with `localStorage`.
+I built this project as a frontend-only app, so it can run from a static host without a backend or database.
 
 ## Live Demo
 
-[Open the live website](https://mrivaldodestadhiohamzah.github.io/StoryNest/)
+- Live site: [https://mrivaldodestadhiohamzah.github.io/StoryNest/](https://mrivaldodestadhiohamzah.github.io/StoryNest/)
+- Source code: [https://github.com/mrivaldodestadhiohamzah/StoryNest](https://github.com/mrivaldodestadhiohamzah/StoryNest)
 
 ## Features
 
-- Responsive landing page and story collection
-- Story cards with image, title, description, date, and actions
-- Add, edit, and delete stories
+- Browse demo stories
+- Add a new story with an image and optional location data
+- Edit and delete saved stories
 - Search stories by title or content
 - Sort stories by newest or oldest
-- Story detail page
-- Static location panel based on saved latitude and longitude
-- Demo stories for first-time visitors
-- Browser-only persistence with `localStorage`
-- GitHub Pages deployment workflow
+- View a detail page for each story
+- See saved story locations in a static location panel
+- Save user-created stories in the browser with `localStorage`
 
 ## Tech Stack
 
 - HTML
 - CSS
-- Vanilla JavaScript ES modules
+- Vanilla JavaScript
+- JavaScript modules
 - `localStorage`
 - GitHub Actions
 - GitHub Pages
 
-## Project Structure
+## Folder Structure
 
 ```text
 /
-├── .github/
-│   └── workflows/
-│       └── pages.yml
-├── assets/
-│   └── SNlogo.png
-├── scripts/
-│   ├── build.js
-│   └── serve-static.js
-├── src/
-│   ├── components/
-│   ├── presenters/
-│   ├── routes/
-│   ├── store/
-│   ├── utils/
-│   └── views/
-├── index.html
-├── script.js
-├── style.css
-├── package.json
-├── .gitignore
-└── README.md
+|-- .github/
+|   `-- workflows/
+|       `-- pages.yml
+|-- assets/
+|   `-- sn-logo.png
+|-- scripts/
+|   |-- build.js
+|   `-- serve-static.js
+|-- src/
+|   |-- components/
+|   |-- presenters/
+|   |-- routes/
+|   |-- store/
+|   |-- utils/
+|   `-- views/
+|-- index.html
+|-- script.js
+|-- style.css
+|-- package.json
+|-- .gitignore
+`-- README.md
 ```
 
 ## Run Locally
 
-This project has no external runtime dependencies. You can install npm metadata if you want to use the included scripts:
+Install dependencies. The project has no third-party runtime packages, but this keeps the npm scripts available:
 
 ```bash
 npm install
 ```
 
-Start a local static server:
+Start the local static server:
 
 ```bash
 npm run dev
@@ -79,17 +79,15 @@ http://127.0.0.1:4174/
 
 ## Build
 
-Generate the deployable static files:
+Create the production files:
 
 ```bash
 npm run build
 ```
 
-The generated output is placed in `dist/`. The `dist/` folder is ignored by Git because GitHub Actions rebuilds it during deployment.
+The output is generated in `dist/`. That folder is ignored because GitHub Actions rebuilds it for deployment.
 
 ## Preview The Build
-
-After building, preview the generated static output:
 
 ```bash
 npm run preview
@@ -101,42 +99,38 @@ Open:
 http://127.0.0.1:4175/
 ```
 
-## Editing Content And Images
+## Editing The Project
 
-- Main HTML shell: `index.html`
-- Main styling: `style.css`
-- App entry point: `script.js`
-- Demo story data: `src/store/localStoryStore.js`
-- Logo and image assets: `assets/`
-
-When adding images, use short lowercase or readable names such as `story-card.png`, `dashboard.png`, or `sn-logo.png`, then update the paths in HTML, CSS, JavaScript, or README files.
+- Edit the page shell in `index.html`.
+- Edit the main styles in `style.css`.
+- Edit routing and app startup in `script.js` and `src/routes/router.js`.
+- Edit demo story data in `src/store/localStoryStore.js`.
+- Add images to `assets/` and use short, readable filenames.
 
 ## Deployment
 
-This project deploys through GitHub Actions using `.github/workflows/pages.yml`.
+This repository uses GitHub Actions to publish the static site to GitHub Pages.
 
-To publish with GitHub Pages:
+To deploy from a GitHub repository:
 
-1. Push the repository to GitHub.
+1. Push the project to GitHub.
 2. Open the repository settings.
 3. Go to `Settings` > `Pages`.
-4. Set `Source` to `GitHub Actions`.
+4. Set the source to `GitHub Actions`.
 5. Push to the default branch.
-6. Wait for the Pages workflow to complete.
+6. Wait for the Pages workflow to finish.
 
-The app uses hash routing (`#/add`, `#/detail/:id`, `#/edit/:id`), so refreshing pages works correctly on GitHub Pages.
-
-## Source Code
-
-The source code is available in the current GitHub repository. Forks or copies can keep the same static deployment workflow without adding a backend.
+The app uses hash routes such as `#/add` and `#/detail/story-id`, so direct refreshes still work on GitHub Pages.
 
 ## Contact
 
-GitHub: [@mrivaldodestadhiohamzah](https://github.com/mrivaldodestadhiohamzah)
+- Email: [mrivaldodestadhiohamzah@gmail.com](mailto:mrivaldodestadhiohamzah@gmail.com)
+- LinkedIn: [linkedin.com/in/mrivaldodhz](https://www.linkedin.com/in/mrivaldodhz/)
+- GitHub: [github.com/mrivaldodestadhiohamzah](https://github.com/mrivaldodestadhiohamzah)
+- WhatsApp: [089624574877](https://wa.me/6289624574877)
 
-## Repository Safety
+## Notes
 
-- No backend service is required.
-- No API keys or private tokens are stored in the project.
-- `.env` files are ignored.
-- Generated folders such as `dist/`, `build/`, and `node_modules/` are ignored.
+- No backend is required.
+- No API key or private credential is needed.
+- User-created stories are saved only in the visitor's browser.

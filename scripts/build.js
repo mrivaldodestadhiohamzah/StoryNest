@@ -5,7 +5,7 @@ const filesToCopy = [
   'index.html',
   'script.js',
   'style.css',
-  'assets/SNlogo.png',
+  'assets/sn-logo.png',
   'src/components/map.js',
   'src/presenters/addStoryPresenter.js',
   'src/presenters/editStoryPresenter.js',

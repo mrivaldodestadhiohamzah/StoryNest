@@ -1,7 +1,7 @@
 {
   "name": "storynest",
   "version": "1.0.0",
-  "description": "A polished frontend-only static story web app with localStorage support.",
+  "description": "Frontend-only story writing app with localStorage support.",
   "private": true,
   "type": "module",
   "scripts": {

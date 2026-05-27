@@ -1,4 +1,4 @@
-export const logoSrc = './assets/SNlogo.png';
+export const logoSrc = './assets/sn-logo.png';
 
 export const escapeHtml = (value = '') => String(value)
   .replaceAll('&', '&amp;')
