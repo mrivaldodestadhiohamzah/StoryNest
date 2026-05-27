@@ -1,0 +1,12 @@
+{
+  "name": "storynest",
+  "version": "1.0.0",
+  "description": "A polished frontend-only static story web app with localStorage support.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve-static.js . 4174",
+    "build": "node scripts/build.js",
+    "preview": "node scripts/serve-static.js dist 4175"
+  }
+}
